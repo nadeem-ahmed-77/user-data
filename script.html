@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+
+    <style>
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f3f4f6;
+      
+      
+    }
+
+      #main {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #b68383;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+      }
+      #main h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+      .group {
+      margin-bottom: 30px;
+      }
+      .group Label {
+      display: block;
+      margin-bottom: 5px;
+      color: black;
+      font-weight: bold;
+      }
+      .group input, .group select {
+      width: 95%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      }
+      .error {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 5px ;
+      }
+
+      .btn {
+        width: 100%;
+        margin-top: 20px;
+        margin: auto ;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: large;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .btn:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      /* margin-top: 10px; */
+      text-align: left;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .ab{
+      margin-bottom: 20px;
+    }
+
+
+    </style>
+  </head>
+  <body class="light">
+    <div id="main">
+      <h2>User Form</h2>
+      
+      
+      <form action="" onSubmit="checkForSelection(event), validateRadios(event), submitData(event)">
+        
+        
+
+        <div class="group">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Enter username"
+          onInput="inputValid(event)"/>
+          <span class="error"></span>
+        </div>
+        
+        <div class="group">
+          <label for="email">Email address</label>
+          <input id="email" type="text" placeholder="Enter your email" onInput="inputEmail(event)"/>
+          <span class="error"></span>
+        </div>
+
+        
+        <div class="group">
+          <label for="pass">Password</label>
+          <input id="pass" type="password" placeholder="Enter your Password" onInput="inputPass(event)" />
+          <span class="error"></span>
+          <span onclick="togglePasswordVisibility()"> </span>
+          
+        </div>
+
+        <div class="group">
+          
+          <label for="states">Select the city Name</label>
+          <select id="states" >
+            <option value="" selected>SELECT A STATE</option>
+            <option value="Karachi"> Karachi</option>
+            <option value="Lahore"> Lahore</option>
+            <option value="Islamabad"> Islamabad</option>
+            </select> 
+         
+        </div>
+        
+                
+        <div class="ab">
+                
+          <label id="gender">Gender</label>
+          <label><input type="radio" name="gender" value="male" /> Male </label>
+          <label><input type="radio" name="gender" value="female"/> Female </label>
+          
+        </div>
+
+        <input type="submit" class="btn"/>
+      </form>
+      
+        <div id="result"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
